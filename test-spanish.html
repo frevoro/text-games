@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Aventura en el Bosque</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f4f4f4;
+      padding: 2rem;
+    }
+    .escena {
+      display: none;
+      margin-top: 1rem;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    /* Mostrar la escena seleccionada */
+    #inicio:checked ~ .e-inicio,
+    #bosque:checked ~ .e-bosque,
+    #cueva:checked ~ .e-cueva,
+    #tesoro:checked ~ .e-tesoro,
+    #monstruo:checked ~ .e-monstruo,
+    #fin:checked ~ .e-fin {
+      display: block;
+    }
+
+    label {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #0077cc;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    label:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Aventura en el Bosque</h1>
+
+  <!-- Radios ocultos -->
+  <input type="radio" name="juego" id="inicio" checked>
+  <input type="radio" name="juego" id="bosque">
+  <input type="radio" name="juego" id="cueva">
+  <input type="radio" name="juego" id="tesoro">
+  <input type="radio" name="juego" id="monstruo">
+  <input type="radio" name="juego" id="fin">
+
+  <!-- Escenas -->
+  <div class="escena e-inicio">
+    <p>Te despiertas al borde de un misterioso bosque. ¿Qué deseas hacer?</p>
+    <label for="bosque">Entrar al bosque</label>
+    <label for="cueva">Explorar una cueva cercana</label>
+  </div>
+
+  <div class="escena e-bosque">
+    <p>El bosque es oscuro y tranquilo. De repente, encuentras un cofre escondido bajo un árbol.</p>
+    <label for="tesoro">Abrir el cofre</label>
+    <label for="fin">Ignorar el cofre y regresar</label>
+  </div>
+
+  <div class="escena e-cueva">
+    <p>La cueva es fría y húmeda. Escuchas un rugido proveniente del fondo.</p>
+    <label for="monstruo">Investigar el sonido</label>
+    <label for="fin">Salir rápidamente de la cueva</label>
+  </div>
+
+  <div class="escena e-tesoro">
+    <p>¡Encuentras oro y joyas! Has tenido un día afortunado.</p>
+    <label for="fin">Fin de la aventura</label>
+  </div>
+
+  <div class="escena e-monstruo">
+    <p>Un enorme monstruo aparece. ¡Corre!</p>
+    <label for="fin">Escapar y terminar la aventura</label>
+  </div>
+
+  <div class="escena e-fin">
+    <p>Gracias por jugar. ¿Quieres volver a empezar?</p>
+    <label for="inicio">Volver al inicio</label>
+  </div>
+
+</body>
+</html>
